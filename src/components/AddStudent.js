@@ -28,7 +28,7 @@ const AddStudent = () => {
         const studentObj = { ...student, ...select }
         setLoading(false)
         try {
-            await axios.post('http://localhost:5000/api/student/addStudent', studentObj)
+            await axios.post('https://pacific-falls-14621.herokuapp.com/api/student/addStudent', studentObj)
             setLoading(true)
             setSuccess("student added succesfully")
             console.log("student added succesfully");

@@ -9,7 +9,7 @@ const StudentView = () => {
     const [loading,setLoading] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/api/student/getStudent')
+            const response = await axios.get('https://pacific-falls-14621.herokuapp.com/api/student/getStudent')
             console.log(response.data);
             setStudent(response.data)
             setLoading(true)
@@ -98,7 +98,7 @@ const StudentView = () => {
     const handleEdit = async () => {
         setLoading(false)
         try {
-            await axios.post('http://localhost:5000/api/student/deleteStudent/', { studentId: studentId })
+            await axios.post('https://pacific-falls-14621.herokuapp.com/api/student/deleteStudent/', { studentId: studentId })
             console.log("success");
             setLoading(true)
             alert("student deleted successfully")
@@ -112,7 +112,7 @@ const StudentView = () => {
     const hangleChangeToActive = async(update)=>{
         const newObject = {studentId , update}
         try {
-            await axios.put('http://localhost:5000/api/student/changeStatus/', newObject)
+            await axios.put('https://pacific-falls-14621.herokuapp.com/api/student/changeStatus/', newObject)
             console.log("success");
             alert("student deleted successfully")
         } catch (error) {

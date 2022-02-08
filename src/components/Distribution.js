@@ -23,7 +23,7 @@ const Distribution = () => {
     useEffect(() => {
         const getFood = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/food/getFood')
+                const response = await axios.get('https://pacific-falls-14621.herokuapp.com/api/food/getFood')
                 setFood(response.data)
                 setLoading(true)
                 console.log(response.data);
@@ -45,7 +45,7 @@ const Distribution = () => {
         event.preventDefault()
 
         try {
-            const response = await axios.post('http://localhost:5000/api/student/searchByRoll', searchRoll)
+            const response = await axios.post('https://pacific-falls-14621.herokuapp.com/api/student/searchByRoll', searchRoll)
             console.log(response.data);
            if(response.data[0]){
             setSearchResult(response.data[0])
@@ -75,7 +75,7 @@ const Distribution = () => {
         const studentObj = {...select ,...studentRoll  }
 
         try {
-            await axios.post('http://localhost:5000/api/distribution/addDistribuiton', studentObj)
+            await axios.post('https://pacific-falls-14621.herokuapp.com/api/distribution/addDistribuiton', studentObj)
             setSuccess("distribution added succesfully")
             console.log("distribution added succesfully");
         } catch (error) {

@@ -18,7 +18,7 @@ const AddFoodItem = () => {
        setLoading(false)
 
            try {
-            await axios.post('http://localhost:5000/api/food/addFood' , food)
+            await axios.post('https://pacific-falls-14621.herokuapp.com/api/food/addFood' , food)
             setSuccess("food added succesfully")
             setLoading(true)
             console.log("food added succesfully");

@@ -9,7 +9,7 @@ const FoodPrice = () => {
     const [loading,setLoading] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('http://localhost:5000/api/food/getFood')
+            const response = await axios.get('https://pacific-falls-14621.herokuapp.com/api/food/getFood')
             console.log(response.data);
             setFood(response.data)
             setLoading(true)
